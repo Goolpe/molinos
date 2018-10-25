@@ -10,10 +10,6 @@ const StyledHeader = styled.header`
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url('./assets/bitmap.jpg');
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-transform: uppercase;
 `;
 
@@ -46,28 +42,40 @@ const textRotate = keyframes`
   from {
     margin-top: -150px;
   }
-
   to {
     margin-top: 0;
   }
 `;
 
-const Plus = styled.p``;
+const Hr = styled.hr`
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  width: 0px;
+  border: 0;
+  border-bottom: 3px solid #4286f4;
+`;
+
+const HrW = styled(Hr)`
+  width: 100%;
+  border-bottom: 3px solid #fff;
+`;
 
 const Button = styled.button`
-  &:hover{
-    border-color: red;
-    transition: 0.5s;
+  &:hover ${Hr} {
+    width: 100%;
+    transition: 0.6s;
   }
   &:hover ${AddNews}{
     animation: ${textRotate} 0.3s;
   }
+  position: relative;
   overflow: hidden;
   margin-top: 146px;
   margin-left: auto;
   margin-right: auto;
   border: 0;
-  border-bottom: 3px solid #fff;
   width: 189px;
   background-color: transparent;
   color: #fff;
@@ -81,14 +89,18 @@ const Button = styled.button`
 function Header(props) {
   return (
     <StyledHeader>
-      <Wrapper>
-        <H1>Мировые новости</H1>
-        <H3>date</H3>
-      </Wrapper>
-      <Button>
-        <AddNews>Добавить новость</AddNews>
-        <Plus>+</Plus>
-      </Button>
+      <section className="container">
+        <Wrapper>
+          <H1>Мировые новости</H1>
+          <H3>date</H3>
+        </Wrapper>
+        <Button>
+          <AddNews>Добавить новость</AddNews>
+          <p>+</p>
+          <HrW />
+          <Hr />
+        </Button>
+      </section>
     </StyledHeader>
   );
 }

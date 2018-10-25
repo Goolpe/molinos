@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 class HomePage extends Component {
   render() {
     return (
-      <Header />
+      <React.Fragment>
+        <Header />
+        <Footer />
+      </React.Fragment>
     )
   }
 }

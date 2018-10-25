@@ -1,15 +1,24 @@
 body{
-  font-family: HelveticaNeueBold, Arial;
+  font-family: HelveticaNeueCyr-Bold, Arial;
   padding: 0;
   margin: 0;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 @font-face
 {
-    font-family: HelveticaNeueBold;
-    src: url(./HelveticaNeueBold.ttf);
+    font-family: HelveticaNeueCyr-Bold;
+    src: url(./HelveticaNeueCyr-Bold.otf);
 }
 
 *:focus{
   outline: none;
+}
+
+.container{
+  width: 923px;
+  margin: auto;
 }
