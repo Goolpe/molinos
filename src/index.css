@@ -1,0 +1,15 @@
+body{
+  font-family: HelveticaNeueBold, Arial;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face
+{
+    font-family: HelveticaNeueBold;
+    src: url(./HelveticaNeueBold.ttf);
+}
+
+*:focus{
+  outline: none;
+}

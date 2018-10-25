@@ -22,17 +22,16 @@ module.exports = {
       },
       {
         test:/\.css$/,
-        use:['style!css-loader']
+        use:['style-loader', 'css-loader']
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|otf|ttf)$/i,
         use: [
           {
             loader: 'file-loader',
             options: {
               path: 'build/',
-              file: 'bundle.js',
-              publicPath: '/assets'
+              file: 'bundle.js'
             }
           }
         ]
