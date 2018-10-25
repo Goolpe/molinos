@@ -1,6 +1,12 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require('path');
 
 module.exports = {
+  output: {
+    path: path.resolve('build'),
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {
@@ -15,11 +21,21 @@ module.exports = {
         }
       },
       {
-        test: /\.ico$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'file-loader'
-        }
+        test:/\.css$/,
+        use:['style!css-loader']
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              path: 'build/',
+              file: 'bundle.js',
+              publicPath: '/assets'
+            }
+          }
+        ]
       }
     ]
   },
@@ -28,6 +44,9 @@ module.exports = {
       favicon: "./src/favicon.ico",
       template: "./src/index.html",
       filename: "./index.html"
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'assets', to: 'assets' }
+    ])
   ]
 }
