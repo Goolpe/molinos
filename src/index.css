@@ -8,6 +8,10 @@ body{
   letter-spacing: normal;
 }
 
+ul{
+  padding: 0;
+}
+
 @font-face
 {
     font-family: HelveticaNeueCyr-Bold;
@@ -21,4 +25,13 @@ body{
 .container{
   width: 923px;
   margin: auto;
+}
+
+.navigation__link{
+  color: #d8d8d8;
+  text-decoration: none;
+}
+
+.navigation__link--active{
+  color: #f9621e;
 }

@@ -60,7 +60,7 @@ function Footer(props) {
         </NavFlex>
       </Container>
     </StyledFooter>
-  )
+  );
 }
 
 export default Footer;

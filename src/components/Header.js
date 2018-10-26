@@ -14,10 +14,10 @@ const StyledHeader = styled.header`
 `;
 
 const Wrapper = styled.section`
-  height: 431px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -70,11 +70,13 @@ const Button = styled.button`
   &:hover ${AddNews}{
     animation: ${textRotate} 0.3s;
   }
-  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  bottom: 164px;
+  left: 0;
   overflow: hidden;
-  margin-top: 146px;
-  margin-left: auto;
-  margin-right: auto;
   border: 0;
   width: 189px;
   background-color: transparent;
