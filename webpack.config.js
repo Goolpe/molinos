@@ -1,8 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require('path');
+require("@babel/polyfill");
 
 module.exports = {
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve('build'),
     filename: 'bundle.js'
@@ -38,10 +40,13 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new HtmlWebPackPlugin({
-      favicon: "./src/favicon.ico",
-      template: "./src/index.html",
+      favicon: "./public/favicon.ico",
+      template: "./public/index.html",
       filename: "./index.html"
     }),
     new CopyWebpackPlugin([

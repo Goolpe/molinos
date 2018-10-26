@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('./assets/bitmap.jpg');
+  background-image: url('../assets/bitmap.jpg');
   text-transform: uppercase;
 `;
 
@@ -81,7 +81,6 @@ const Button = styled.button`
   width: 189px;
   background-color: transparent;
   color: #fff;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;

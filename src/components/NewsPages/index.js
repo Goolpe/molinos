@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import NewsBlock from './NewsBlock';
 
 const Container = styled.section`
   display: grid;
@@ -113,6 +114,7 @@ class NewsPage extends Component {
             </Article>
           </Articles>
         </Block>
+        <NewsBlock start='0' end='2'/>
       </Container>
     )
   }

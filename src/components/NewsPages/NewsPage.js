@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import NewsBlock from './NewsBlock';
+import styled from 'styled-components';
 
-class HomePage extends Component {
+const Container = styled.section`
+  min-height: 100vh;
+`
+
+class NewsPage extends Component {
   render() {
     return (
-      <section className="container">
-        
-      </section>
+      <Container className="container">
+        <NewsBlock start='0' end='4' />
+      </Container>
     )
   }
 }
 
-export default HomePage;
+export default NewsPage;
