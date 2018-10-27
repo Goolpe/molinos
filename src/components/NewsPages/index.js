@@ -66,7 +66,7 @@ const Views = styled.p`
   margin-right: 27px;
 `;
 
-class NewsPage extends Component {
+class NewsPages extends Component {
   render() {
     return (
       <Container className="container">
@@ -114,10 +114,10 @@ class NewsPage extends Component {
             </Article>
           </Articles>
         </Block>
-        <NewsBlock start='0' end='2'/>
+        <NewsBlock currentPage='1' todosPerPage='2'/>
       </Container>
     )
   }
 }
 
-export default NewsPage;
+export default NewsPages;

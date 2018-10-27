@@ -10,7 +10,7 @@ class NewsPage extends Component {
   render() {
     return (
       <Container className="container">
-        <NewsBlock start='0' end='4' />
+        <NewsBlock currentPage='1' todosPerPage='4' />
       </Container>
     )
   }

@@ -52,7 +52,7 @@ function Footer(props) {
       <Container className='container'>
         <SeacrhFlex>
           <Input placeholder='Поиск' />
-          <Img src='./assets/appstore.png' />
+          <Img src='../assets/appstore.png' />
         </SeacrhFlex>
         <NavFlex>
           <P>Редакция  Реклама  Пресс-релизы  Техподдержка  Спецпроекты  Вакансии  RSS</P>

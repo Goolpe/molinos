@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import NewsPages from './components/NewsPages';
 import NewsPage from './components/NewsPages/NewsPage';
 import styled from 'styled-components';
+import PaginationBlock from './components/NewsPages/Pagination';
+import Articles from './components/NewsPages/Articles';
+import Pages from './components/NewsPages/Pages';
 
 const Nav = styled.ul`
   display: flex;
@@ -27,7 +30,7 @@ class App extends Component {
           <nav className='container'>
             <Nav>
               <NavLink to='/' exact={true} activeClassName='navigation__link--active' className='navigation__link'>Все</NavLink>
-              <NavLink to='/news/politics'  activeClassName='navigation__link--active' className='navigation__link'>Политика</NavLink>
+              <NavLink to='/news/politics' activeClassName='navigation__link--active' className='navigation__link'>Политика</NavLink>
               <NavLink to='/news/sports'  activeClassName='navigation__link--active' className='navigation__link'>Спорт</NavLink>
               <NavLink to='/news/health' activeClassName='navigation__link--active' className='navigation__link'>Происшествия</NavLink>
               <NavLink to='/news/science' activeClassName='navigation__link--active' className='navigation__link'>Наука</NavLink>
@@ -36,8 +39,10 @@ class App extends Component {
           </nav>
           <Switch>
             <Route path="/" exact={true} component={NewsPages} />
-            <Route path="/news/:id" component={NewsPage} />
+            <Route path="/news/:id" component={Articles} />
+            <Route path="/page/:id" component={Pages} />
           </Switch>
+          <PaginationBlock />
           <Footer />
         </React.Fragment>
       </Router>

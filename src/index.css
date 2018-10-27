@@ -17,6 +17,10 @@ button{
   cursor: pointer;
 }
 
+::placeholder {
+    color: #d8d8d8;
+}
+
 @font-face
 {
     font-family: HelveticaNeueCyr-Bold;
@@ -25,6 +29,10 @@ button{
 
 *:focus{
   outline: none;
+}
+
+input[type="file"] {
+    opacity: 0;
 }
 
 .container{
@@ -39,4 +47,9 @@ button{
 
 .navigation__link--active{
   color: #f9621e;
+}
+
+.input--active{
+  border-color: #000;
+  color: #000 !important;
 }

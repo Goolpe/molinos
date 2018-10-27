@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { withRouter, Link } from 'react-router-dom';
-import news from './news.json';
 
 const Container = styled.section`
   display: grid;
@@ -85,7 +84,7 @@ const MoreNews = styled(Page)`
   font-size: 16px;
 `;
 
-class NewsBlock extends Component {
+class PaginationBlock extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -151,7 +150,7 @@ class NewsBlock extends Component {
     });
   }
   render() {
-    const newsItems = news.map( (article, index) =>
+    const newsItems = this.state.articles.map( (article, index) =>
       <article key={index}>
         <Figure>
           <Img src={article.urlToImage}/>
@@ -168,12 +167,16 @@ class NewsBlock extends Component {
     )
     return (
       <section className="container">
-        <Container>
-        {newsItems}
-        </Container>
+        <PagBlock>
+          <MoreNews onClick={this.moreNews} id='moreNews' >Больше новостей</MoreNews>
+          <Pagination>
+            <Link to={`/page/1`}>1</Link>
+            <Link to={`/page/2`}>2</Link>
+          </Pagination>
+        </PagBlock>
       </section>
     );
   }
 }
 
-export default withRouter(NewsBlock);
+export default withRouter(PaginationBlock);
