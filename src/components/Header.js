@@ -1,328 +1,185 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
 import moment from 'moment';
-
-
-const StyledHeader = styled.header`
-  width: 100%;
-  height: 100vh;
-  color: #fff;
-  background-color: #000000;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url('../assets/bitmap.jpg');
-  text-transform: uppercase;
-`;
-
-const Wrapper = styled.section`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const H1 = styled.h1`
-  margin: 17px 0;
-  font-size: 36px;
-  font-weight: bold;
-`;
-
-const H3 = styled.h3`
-  margin: 0;
-  font-size: 11px;
-  opacity: 0.81;
-  font-weight: 500;
-`;
-
-const AddNews = styled(H3)`
-  display: block;
-`;
-
-const textRotate = keyframes`
-  from {
-    margin-top: -150px;
-  }
-  to {
-    margin-top: 0;
-  }
-`;
-
-const Hr = styled.hr`
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  left: 0;
-  width: 0px;
-  border: 0;
-  border-bottom: 3px solid #4286f4;
-`;
-
-const HrW = styled(Hr)`
-  width: 100%;
-  border-bottom: 3px solid #fff;
-`;
-
-const Button = styled.button`
-  &:hover ${Hr} {
-    width: 100%;
-    transition: 0.6s;
-  }
-  &:hover ${AddNews}{
-    animation: ${textRotate} 0.3s;
-  }
-  left: 0;
-  right: 0;
-  margin: auto;
-  position: absolute;
-  bottom: 164px;
-  left: 0;
-  overflow: hidden;
-  border: 0;
-  width: 189px;
-  background-color: transparent;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Modal = styled.div`
-  z-index: 900;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url(../assets/modalbg.jpg);
-`;
-
-const Form = styled.form`
-  z-index: 999;
-  width: 400px;
-  height: 520px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-color: #fff;
-  text-align: center;
-  color: #000;
-`;
-
-const Close = styled.div`
-  text-align: right;
-  margin-top: 16px;
-  margin-right: 16px;
-  margin-bottom: 40px;
-`;
-
-const ButtonClose = styled.button`
-  background-color: transparent;
-  border: 0;
-`;
-
-const ModalTitle = styled(H1)`
-  margin-top: 40px;
-  margin-bottom: 60px;
-`;
-
-const Block = styled.div`
-  margin: auto;
-  width: 340px;
-`;
-
-const InputBlock = styled.div`
-  width: inherit;
-  position: relative;
-  height: 50px;
-  margin: 20px 0;
-  border: 1px solid #d8d8d8;
-`;
-
-const Select = styled.select`
-  width: inherit;
-  height: inherit;
-  padding-left: 23px;
-  box-sizing: border-box;
-  font-size: 11px;
-  color: #d8d8d8;
-  background-image: url(../assets/expand-button.svg);
-  background-repeat: no-repeat;
-  background-position:
-    calc(100% - 20px) 22px;
-  appearance:none;
-  cursor: pointer;
-  border: 0;
-`;
-
-const ButtonRemove = styled(ButtonClose)`
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 50px;
-`;
-
-const Img = styled.img`
-  height: 11px;
-  width: 11px;
-`;
-
-const Input = styled.input`
-  width: inherit;
-  height: inherit;
-  padding-left: 23px;
-  box-sizing: border-box;
-  font-size: 11px;
-  border: 0;
-`;
-
-const Upload = styled(Input)`
-  color: #d8d8d8;
-`;
-
-const InputFake = styled(Input)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-`;
-
-const ButtonSend = styled(ButtonClose)`
-  color: #d8d8d8;
-  margin: 5px;
-  font-size: 16px;
-`;
+import newsItems from './news.json';
+import '../styles/header.scss';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       display: false,
-      name: '',
+      title: '',
       text: '',
       category: '',
+      tag: '',
       file: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeSelect = this.handleChangeSelect.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
+  componentDidMount(){
+    if (!localStorage.news) {
+      localStorage.setItem('news', JSON.stringify(newsItems));
+    }
+  }
   handleSubmit(e) {
     e.preventDefault();
+    const news = JSON.parse(localStorage.getItem('news'));
+    const newsData = {
+      'title': this.state.title,
+      'text': this.state.text,
+      'category': this.state.category,
+      'tag': this.state.tag,
+      'file': this.state.file.name,
+      'date': new Date(),
+    };
+    news.push(newsData);
+    localStorage.setItem('news', JSON.stringify(news));
     this.setState({
       display: false,
-      name: '',
+      title: '',
       text: '',
       category: '',
+      tag: '',
       file: null,
     });
+    document.body.style.overflow = 'auto';
   }
+
   handleClick() {
+    if(!this.state.display){
+      document.body.style.overflow = 'hidden';
+    }
+    else{
+      this.setState({
+        display: false,
+        title: '',
+        text: '',
+        category: '',
+        tag: '',
+        file: null,
+      });
+      document.body.style.overflow = 'auto';
+    }
     this.setState({
       display: !this.state.display,
     });
   }
+
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
+
+  handleChangeSelect(e) {
+    this.setState({
+      category: JSON.parse(e.target.value).category,
+      tag: JSON.parse(e.target.value).tag,
+    });
+  }
+
   handleFile(e) {
     this.setState({
       [e.target.name]: e.target.files[0],
     });
   }
+
   handleRemove() {
     this.setState({
       file: null,
     });
   }
+
   render() {
     return (
-      <StyledHeader>
+      <header className='header'>
         <section className="container">
-          <Wrapper>
-            <H1>Мировые новости</H1>
-            <H3>{moment().locale('ru').format('DD MMMM YYYY, dddd, hh:mm')}</H3>
-          </Wrapper>
-          <Button onClick={this.handleClick}>
-            <AddNews>Добавить новость</AddNews>
+          <section className='header__wrapper'>
+            <h1 className='wrapper__title'>Мировые новости</h1>
+            <h4 className='wrapper__subtitle'>{moment().locale('ru').format('DD MMMM YYYY, dddd, HH:mm')}</h4>
+          </section>
+          <button className='wrapper__addNews' onClick={this.handleClick}>
+            <h4 className='addNews__title'>Добавить новость</h4>
             <p>+</p>
-            <HrW />
-            <Hr />
-          </Button>
+            <hr className='addNews__hr--white' />
+            <hr className='addNews__hr--blue' />
+          </button>
         </section>
         {this.state.display &&
-        <Modal id='Modal'>
-          <Form onSubmit={this.handleSubmit}>
-            <Close>
-              <ButtonClose onClick={this.handleClick}>
-                <img src='../assets/close.svg'/>
-              </ButtonClose>
-            </Close>
-            <ModalTitle>Title</ModalTitle>
-            <Block>
-              <InputBlock className={this.state.name ? 'input--active' : ''}>
-                <Input type='text'
-                  value={this.state.name}
-                  name='name'
+        <section className='modal-window' id='Modal'>
+          <form className='modal-window__form' onSubmit={this.handleSubmit}>
+            <div className='form__close'>
+              <button className='form__button' onClick={this.handleClick}>
+                <img src='/assets/close.svg'/>
+              </button>
+            </div>
+            <h1 className='form__title'>Title</h1>
+            <div className='form__block'>
+              <div className={`form__input-block ${this.state.title ? 'input--active' : ''}`}>
+                <input type='text'
+                  className='form__input'
+                  value={this.state.title}
+                  name='title'
                   onChange={this.handleChange}
                   placeholder='Название'
                   required
                 />
-              </InputBlock>
-              <InputBlock  className={this.state.text ? 'input--active' : ''}>
-                <Input type='text'
+              </div>
+              <div  className={`form__input-block ${this.state.text ? 'input--active' : ''}`}>
+                <textarea type='text'
+                  className='form__textarea'
                   value={this.state.text}
                   name='text'
                   onChange={this.handleChange}
                   placeholder='Текст'
                   required
                 />
-              </InputBlock>
-              <InputBlock className={this.state.category ? 'input--active' : ''}>
-                <Select
-                  className={this.state.category ? 'input--active' : ''}
-                  value={this.state.category || "Категория"}
+              </div>
+              <div className={`form__input-block ${this.state.category ? 'input--active' : ''}`}>
+                <select
+                  className={`form__select ${this.state.category ? 'input--active' : ''}`}
                   name='category'
-                  onChange={this.handleChange}
+                  onChange={this.handleChangeSelect}
                   required
                 >
-                  <option value="0" hidden>Категория</option>
-                  <option value="politics">Политика</option>
-                  <option value="sports">Спорт</option>
-                  <option value="accidents">Происшествия</option>
-                  <option value="science">Наука</option>
-                  <option value="business">Бизнес</option>
-                </Select>
-              </InputBlock>
-              <InputBlock className={this.state.file ? 'input--active' : ''}>
-                  <Upload className={this.state.file ? 'input--active' : ''} value={this.state.file ? this.state.file.name : 'Upload file'} readOnly/>
-                  <InputFake type='file' name='file' onChange={this.handleFile} required/>
+                  <option value='{"category":"Категория","tag":"category"}' hidden>Категория</option>
+                  <option value='{"category":"Политика","tag":"politics"}'>Политика</option>
+                  <option value='{"category":"Спорт","tag":"sports"}'>Спорт</option>
+                  <option value='{"category":"Происшествия", "tag":"accidents"}'>Происшествия</option>
+                  <option value='{"category":"Наука","tag":"science"}'>Наука</option>
+                  <option value='{"category":"Бизнес","tag":"business"}'>Бизнес</option>
+                </select>
+              </div>
+              <div className={`form__input-block ${this.state.file ? 'input--active' : ''}`}>
+                  <input className={`form__input form__input--upload ${this.state.file ? 'input--active' : ''}`}
+                    value={this.state.file ? this.state.file.name : 'Upload file'}
+                    readOnly
+                  />
+                  <input type='file' className='form__input form__input--fake' name='file' onChange={this.handleFile} required/>
                   {this.state.file &&
-                    <ButtonRemove onClick={this.handleRemove}>
-                      <Img src='../assets/close.svg'/>
-                    </ButtonRemove>
+                    <button className='form__button form__remove-button' onClick={this.handleRemove}>
+                      <img className='form__icon' src='/assets/close.svg'/>
+                    </button>
                   }
-              </InputBlock>
-            </Block>
-             <ButtonSend className={(this.state.name && this.state.text && this.state.category && this.state.file) ? 'input--active' : ''}>ОТПРАВИТЬ</ButtonSend>
-          </Form>
-        </Modal>}
-      </StyledHeader>
+              </div>
+            </div>
+             <button
+              className={`form__button form__send-button ${
+                this.state.title &&
+                this.state.text &&
+                this.state.category &&
+                this.state.file ? 'input--active' : ''}`}
+              >
+                ОТПРАВИТЬ
+              </button>
+          </form>
+        </section>}
+      </header>
     );
   }
 }

@@ -1,0 +1,34 @@
+.footer{
+  background: #000;
+  height: 247px;
+  color: #fff;
+}
+
+.container__flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container__flex--search{
+  flex-direction: row;
+  padding-top: 78px;
+}
+
+.container__flex--search__input{
+  background: transparent;
+  color: #fff;
+  padding-bottom: 14px; 
+  border: 0;
+  border-bottom: 3px solid #fff;
+}
+
+.container__flex--apple-icon{
+  width: 84px;
+  height: 28px;
+}
+
+.container__flex--bottom{
+  flex-direction: row;
+  padding-top: 79px;
+}

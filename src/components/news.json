@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Дзюба стал «человеком года» по версии GQ ",
+    "text": "Lorem ipsum",
+    "category": "Спорт",
+    "tag": "sports",
+    "file": "/assets/dzyuba.jpg",
+    "date": "2018-09-11T01:50:04.208Z"
+  },
+  {
+    "title": "Найдены виновные в обвале рубля",
+    "text": "Lorem ipsum",
+    "category": "Политика",
+    "tag": "politics",
+    "file": "https://memepedia.ru/wp-content/uploads/2016/09/nu-davay-taya-rasskazhi-kak-ty-men_10074996_orig_.jpeg",
+    "date": "2018-09-11T01:50:04.208Z"
+  },
+  {
+    "title": "НАСА отреагировало на обвинения в продырявливании «Союза»",
+    "text": "Lorem ipsum",
+    "category": "Происшествия",
+    "tag": "accidents",
+    "file": "https://memepedia.ru/wp-content/uploads/2017/09/%D0%B4%D0%B5%D0%B2%D0%BE%D1%87%D0%BA%D0%B0-%D1%81-%D1%85%D0%B2%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8-%D0%BC%D0%B5%D0%BC-1.jpg",
+    "date": "2018-09-12T03:19:04.208Z"
+  },
+  {
+    "title": "Меркель допустила атаку Германии на Сирию",
+    "text": "Lorem ipsum",
+    "category": "Бизнес",
+    "tag": "business",
+    "file": "http://newsworker.ru/wp-content/uploads/2013/03/angela-merkel.jpg",
+    "date": "2018-09-12T18:08:04.208Z"
+  },
+  {
+    "title": "Япония отвергла предложение Путина о мире",
+    "text": "Lorem ipsum",
+    "category": "Политика",
+    "tag": "politics",
+    "file": "/assets/Yaposhka.jpg",
+    "date": "2018-09-13T16:23:04.208Z"
+  },
+  {
+    "title": "Виктор Ан обратился к болельщикам",
+    "text": "Lorem ipsum",
+    "category": "Спорт",
+    "tag": "sports",
+    "file": "/assets/ViktorAn.jpg",
+    "date": "2018-09-12T18:08:04.208Z"
+  },
+  {
+    "title": "Пенсионная реформа отменена! ...для депутатов Единой России",
+    "text": "Lorem ipsum",
+    "category": "Бизнес",
+    "tag": "business",
+    "file": "http://img-fotki.yandex.ru/get/4102/pierell.10/0_3adbd_62c3d4b9_L",
+    "date": "2018-09-12T18:08:04.208Z"
+  },
+  {
+    "title": "Правообладатель образа Ждуна подал иск к Первому каналу",
+    "text": "Lorem ipsum",
+    "category": "Политика",
+    "tag": "politics",
+    "file": "https://rian.com.ua/images/102171/44/1021714462.jpg",
+    "date": "2018-09-13T16:23:04.208Z"
+  },
+  {
+    "title": "«Одна из величайших игр всех времён»: Red Dead Redemption 2",
+    "text": "Lorem ipsum",
+    "category": "Спорт",
+    "tag": "sports",
+    "file": "https://i.ytimg.com/vi/p_ZjZiI5CM8/maxresdefault.jpg",
+    "date": "2018-09-12T18:08:04.208Z"
+  }
+]

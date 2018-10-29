@@ -7,42 +7,27 @@ import {
 } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import NewsPages from './components/NewsPages';
-import NewsPage from './components/NewsPages/NewsPage';
-import styled from 'styled-components';
-import PaginationBlock from './components/NewsPages/Pagination';
-import Articles from './components/NewsPages/Articles';
-import Pages from './components/NewsPages/Pages';
-
-const Nav = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 43px 0;
-`
+import NewsGrid from './components/NewsGrid';
+import NewsBlock from './components/NewsBlock';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      articles: [],
+    };
+  }
   render() {
     return (
       <Router>
         <React.Fragment>
-          <Header />
-          <nav className='container'>
-            <Nav>
-              <NavLink to='/' exact={true} activeClassName='navigation__link--active' className='navigation__link'>Все</NavLink>
-              <NavLink to='/news/politics' activeClassName='navigation__link--active' className='navigation__link'>Политика</NavLink>
-              <NavLink to='/news/sports'  activeClassName='navigation__link--active' className='navigation__link'>Спорт</NavLink>
-              <NavLink to='/news/health' activeClassName='navigation__link--active' className='navigation__link'>Происшествия</NavLink>
-              <NavLink to='/news/science' activeClassName='navigation__link--active' className='navigation__link'>Наука</NavLink>
-              <NavLink to='/news/business' activeClassName='navigation__link--active' className='navigation__link'>Бизнес</NavLink>
-            </Nav>
-          </nav>
-          <Switch>
-            <Route path="/" exact={true} component={NewsPages} />
-            <Route path="/news/:id" component={Articles} />
-            <Route path="/page/:id" component={Pages} />
-          </Switch>
-          <PaginationBlock />
+          <Header/>
+          <NewsBlock>
+            <Switch>
+              <Route path="/" exact={true} component={NewsGrid} />
+              <Route path='/page/:page' component={NewsGrid} />
+            </Switch>
+          </NewsBlock>
           <Footer />
         </React.Fragment>
       </Router>

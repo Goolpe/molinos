@@ -1,13 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== 'production'
 const path = require('path');
 require("@babel/polyfill");
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
-    path: path.resolve('build'),
-    filename: 'bundle.js'
+    path: path.join( __dirname, "build" ),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -23,11 +26,15 @@ module.exports = {
         }
       },
       {
-        test:/\.css$/,
-        use:['style-loader', 'css-loader']
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(gif|png|jpe?g|svg|otf|ttf)$/i,
+        test: /\.(gif|png|jpe?g|svg|otf|ttf|woff)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -51,6 +58,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'assets', to: 'assets' }
-    ])
+    ]),
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    })
   ]
 }

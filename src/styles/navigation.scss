@@ -1,0 +1,32 @@
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 43px 0;
+  font-size: 11px;
+}
+
+.navigation__link{
+  background: transparent;
+  border: 0;
+  color: #d8d8d8;
+}
+
+.navigation__link--active{
+  color: #f9621e;
+}
+.navigation__link--sports{
+  color: #f9621e;
+}
+.navigation__link--politics{
+  color: #ff5050;
+}
+.navigation__link--business{
+  color: #06a015;
+}
+.navigation__link--science{
+  color: #1b67e2;
+}
+.navigation__link--accidents{
+  color: #423f3f;
+}
