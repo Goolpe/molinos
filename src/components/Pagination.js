@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 
 class Pagination extends Component {
   render() {
-    
+
     const count = this.props.articles.filter(article =>
       this.props.tag === article.tag || this.props.tag === 'all').length - 4;
 
@@ -16,11 +16,14 @@ class Pagination extends Component {
     const pagination = pageNumbers.map( (number, index) =>
       <React.Fragment key={index}>
         {pageNumbers.length > 1 && 
-        <Link to={`/page/${number}`}
-          className='pagination__link' onClick={() => {this.props.handleLink(number)}}
-        >
-          <h3>{number}</h3>
-        </Link>}
+        <li>
+          <Link to={`/page/${number}`}
+            className='pagination__link' onClick={() => {this.props.handleLink(number)}}
+          >
+            {number}
+          </Link>
+        </li>
+        }
       </React.Fragment>,
     );
     return (

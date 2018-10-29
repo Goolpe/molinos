@@ -4,12 +4,14 @@ import '../styles/newsblock.scss';
 import Navigation from './Navigation';
 import NewsGrid from './NewsGrid';
 import Pagination from './Pagination';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchArticles } from './actions/actionNews';
 
 class NewsBlock extends Component {
   constructor(props){
     super(props);
     this.state={
-      articles: [],
       category: 'Главные новости',
       currentPage: 1,
       todosPerPage: 2,
@@ -22,9 +24,7 @@ class NewsBlock extends Component {
 
   componentDidMount() {
     if(localStorage.news){
-      this.setState({
-        articles: JSON.parse(localStorage.getItem('news')),
-      });
+      this.props.fetchArticles();
     }
   }
 
@@ -46,7 +46,7 @@ class NewsBlock extends Component {
   handleClick(e) {
     this.setState({
       category: e.target.name,
-      tag: e.target.id,
+      tag: e.target.dataset.tag,
       currentPage: 1,
     })
   }
@@ -58,10 +58,9 @@ class NewsBlock extends Component {
   }
 
   moreNews() {
-    if (this.state.articles.filter(article =>
+    if (this.props.articles.filter(article =>
       this.state.tag === article.tag || this.state.tag === 'all').length /
       this.state.todosPerPage > this.state.currentPage) {
-
       this.setState({
         todosPerPage: +this.state.todosPerPage + 2
       });
@@ -76,17 +75,15 @@ class NewsBlock extends Component {
       <section className="container">
         <Navigation tag={this.state.tag} handleClick={this.handleClick}/>
         <NewsGrid
-          articles={this.state.articles}
+          articles={this.props.articles}
           category={this.state.category}
           tag={this.state.tag}
           currentPage={this.state.currentPage}
           todosPerPage={this.state.todosPerPage}
           handleClick={this.handleClick}
-          pages={this.state.pages}
         />
         <Pagination
-          articles={this.state.articles}
-          category={this.state.category}
+          articles={this.props.articles}
           tag={this.state.tag}
           handleClick={this.handleClick}
           handleLink={this.handleLink}
@@ -99,4 +96,12 @@ class NewsBlock extends Component {
   }
 }
 
-export default withRouter(NewsBlock);
+NewsBlock.propTypes = {
+  fetchArticles: PropTypes.func,
+};
+
+const mapStateToProps = state => ({
+  articles: state.articles.items,
+});
+
+export default connect(mapStateToProps, { fetchArticles })(withRouter(NewsBlock));

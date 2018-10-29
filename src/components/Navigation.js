@@ -12,7 +12,7 @@ class Navigation extends Component {
       <nav className='container'>
         <ul className='navigation'>
           <li>
-            <button name='Главные новости' id='all'
+            <button name='Главные новости' data-tag='all'
               className={`navigation__link ${this.props.tag === 'all' ? 'navigation__link--active' : ''}`}
               onClick={this.props.handleClick}
             >
@@ -20,7 +20,7 @@ class Navigation extends Component {
             </button>
           </li>
           <li>
-            <button name='Политика' id='politics'
+            <button name='Политика' data-tag='politics'
               className={`navigation__link ${this.props.tag === 'politics' ? 'navigation__link--politics' : ''}`}
               onClick={this.props.handleClick}
             >
@@ -28,7 +28,7 @@ class Navigation extends Component {
             </button>
           </li>
           <li>
-            <button name='Спорт' id='sports'
+            <button name='Спорт' data-tag='sports'
               className={`navigation__link ${this.props.tag === 'sports' ? 'navigation__link--sports' : ''}`}
               onClick={this.props.handleClick}
             >
@@ -36,7 +36,7 @@ class Navigation extends Component {
             </button>
           </li>
           <li>
-            <button name='Происшествия' id='accidents'
+            <button name='Происшествия' data-tag='accidents'
               className={`navigation__link ${this.props.tag === 'accidents' ? 'navigation__link--accidents' : ''}`}
               onClick={this.props.handleClick}
             >
@@ -44,7 +44,7 @@ class Navigation extends Component {
             </button>
           </li>
           <li>
-            <button name='Наука' id='science'
+            <button name='Наука' data-tag='science'
               className={`navigation__link ${this.props.tag === 'science' ? 'navigation__link--science' : ''}`}
               onClick={this.props.handleClick}
             >
@@ -52,7 +52,7 @@ class Navigation extends Component {
             </button>
           </li>
           <li>
-            <button name='Бизнес' id='business'
+            <button name='Бизнес' data-tag='business'
               className={`navigation__link ${this.props.tag === 'business' ? 'navigation__link--business' : ''}`}
               onClick={this.props.handleClick}
             >

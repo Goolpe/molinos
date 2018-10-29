@@ -7,7 +7,7 @@ function Footer(props) {
       <section className='container container__flex'>
         <div className='container__flex container__flex--search'>
           <input className='container__flex--search__input' placeholder='Поиск' />
-          <img className='container__flex--apple-icon' src='/assets/appstore.png' />
+          <img className='container__flex--apple-icon' alt='appstore' src='/assets/appstore.png' />
         </div>
         <div className='container__flex container__flex--bottom'>
           <h4>Редакция  Реклама  Пресс-релизы  Техподдержка  Спецпроекты  Вакансии  RSS</h4>

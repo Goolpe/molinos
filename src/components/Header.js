@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import newsItems from './news.json';
 import '../styles/header.scss';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createArticle } from './actions/actionNews';
 
 class Header extends Component {
   constructor(props) {
@@ -28,7 +31,6 @@ class Header extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    const news = JSON.parse(localStorage.getItem('news'));
     const newsData = {
       'title': this.state.title,
       'text': this.state.text,
@@ -37,8 +39,7 @@ class Header extends Component {
       'file': this.state.file.name,
       'date': new Date(),
     };
-    news.push(newsData);
-    localStorage.setItem('news', JSON.stringify(news));
+    this.props.createArticle(newsData);
     this.setState({
       display: false,
       title: '',
@@ -115,7 +116,7 @@ class Header extends Component {
           <form className='modal-window__form' onSubmit={this.handleSubmit}>
             <div className='form__close'>
               <button className='form__button' onClick={this.handleClick}>
-                <img src='/assets/close.svg'/>
+                <img alt='close' src='/assets/close.svg'/>
               </button>
             </div>
             <h1 className='form__title'>Title</h1>
@@ -163,7 +164,7 @@ class Header extends Component {
                   <input type='file' className='form__input form__input--fake' name='file' onChange={this.handleFile} required/>
                   {this.state.file &&
                     <button className='form__button form__remove-button' onClick={this.handleRemove}>
-                      <img className='form__icon' src='/assets/close.svg'/>
+                      <img alt='close' className='form__icon' src='/assets/close.svg'/>
                     </button>
                   }
               </div>
@@ -184,4 +185,12 @@ class Header extends Component {
   }
 }
 
-export default Header;
+Header.propTypes = {
+  createArticles: PropTypes.func,
+};
+
+const mapStateToProps = state => ({
+  articles: state.articles.items,
+});
+
+export default connect(mapStateToProps, { createArticle })(Header);

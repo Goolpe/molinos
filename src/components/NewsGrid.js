@@ -26,7 +26,7 @@ class NewsGrid extends Component {
             article.tag === 'business' ? 'article__category--business' :
             article.tag === 'accidents' ? 'article__category--accidents' : ''
           }`} onClick={this.props.handleClick} >{article.category}</button>
-          <button className='article__share'><img src='/assets/share.svg'/></button>
+          <button className='article__share'><img alt={article.tag + 'share'} src='/assets/share.svg'/></button>
           <figcaption className='article__caption'>
             <time>
               <h4>{moment(article.date).locale('ru').format('HH:mm, DD MMMM YYYY')}</h4>
@@ -42,7 +42,7 @@ class NewsGrid extends Component {
         <h3 className='list__title'>{article.title}</h3>
         <div className='list__description'>
           <p className='list__views'>
-            <img src='/assets/eye.svg' className='description__icon--view'/>
+            <img alt={article.tag} src='/assets/eye.svg' className='description__icon--view'/>
             320
           </p>
           <time>{moment(article.date).locale('ru').format('HH:mm, DD MMMM YYYY')}</time>
@@ -61,7 +61,7 @@ class NewsGrid extends Component {
               article.tag === 'business' ? 'article__category--business' :
               article.tag === 'accidents' ? 'article__category--accidents' : ''
             }`} onClick={this.props.handleClick} >{article.category}</button>
-            <button className='article__share'><img src='/assets/share.svg'/></button>
+            <button className='article__share'><img alt={article.tag + 'share'} src='/assets/share.svg'/></button>
             <figcaption className='article__caption'>
               <time>
                 <h4>{moment(article.date).locale('ru').format('HH:mm, DD MMMM YYYY')}</h4>
@@ -76,7 +76,7 @@ class NewsGrid extends Component {
       <section className='container__grid'>
         <section className='container__grid--first'>
           <section className='container--block'>
-            <h2>{moment().locale('ru').format('DD MMMM YYYY, dddd, HH:mm')}</h2>
+            <h2 className='container--block__category-title'>{moment().locale('ru').format('DD MMMM YYYY, dddd, HH:mm')}</h2>
             <div className='container__grid--first--block'>
               {newsMainItem}
             </div>
