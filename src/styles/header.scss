@@ -166,6 +166,10 @@
   border: 0;
 }
 
+.form__select::-ms-expand {
+    display: none;
+}
+
 .form__select{
   width: inherit;
   height: inherit;

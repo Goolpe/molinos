@@ -106,9 +106,9 @@ class Header extends Component {
           </section>
           <button className='wrapper__addNews' onClick={this.handleClick}>
             <h4 className='addNews__title'>Добавить новость</h4>
-            <p>+</p>
             <hr className='addNews__hr--white' />
             <hr className='addNews__hr--blue' />
+            <p>+</p>
           </button>
         </section>
         {this.state.display &&
@@ -148,7 +148,7 @@ class Header extends Component {
                   onChange={this.handleChangeSelect}
                   required
                 >
-                  <option value='{"category":"Категория","tag":"category"}' hidden>Категория</option>
+                  <option value='{"category":"Категория","tag":"category"}' hidden disabled="disabled">Категория</option>
                   <option value='{"category":"Политика","tag":"politics"}'>Политика</option>
                   <option value='{"category":"Спорт","tag":"sports"}'>Спорт</option>
                   <option value='{"category":"Происшествия", "tag":"accidents"}'>Происшествия</option>
