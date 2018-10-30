@@ -51,7 +51,7 @@ class NewsGrid extends Component {
     );
 
     const newsItems = currentTodos.map( (article, index) =>
-      <article key={index}>
+      <article className='flex__subblock--third' key={index}>
         <figure className='article__figure'>
           <img className='article__img' alt={article.title} src={article.file}/>
             <button name={article.category} data-tag={article.tag} className={`article__category ${
@@ -73,22 +73,20 @@ class NewsGrid extends Component {
     );
 
     return (
-      <section className='container__grid'>
-        <section className='container__grid--first'>
-          <section className='container--block'>
-            <h2 className='container--block__category-title'>{moment().locale('ru').format('DD MMMM YYYY, dddd, HH:mm')}</h2>
-            <div className='container__grid--first--block'>
+      <section className='container__flex'>
+        <section className='flex__block'>
+          <section className='flex__subblock flex__subblock--first'>
+            <h2 className='block__category-title'>{moment().locale('ru').format('DD MMMM YYYY, dddd, HH:mm')}</h2>
               {newsMainItem}
-            </div>
           </section>
-          <section className='container--block'>
-            <h2 className='container--block__category-title'>{this.props.category}</h2>
-            <section className='container--block__list'>
+          <section className='flex__subblock flex__subblock--second'>
+            <h2 className='block__category-title'>{this.props.category}</h2>
+            <section className='block__list'>
               {newsList}
             </section>
           </section>
         </section>
-        <section className='container__grid--second'>
+        <section className='flex__block'>
           {newsItems}
         </section>
       </section>
