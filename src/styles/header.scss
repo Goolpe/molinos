@@ -171,7 +171,6 @@
 }
 
 .form__select{
-  width: inherit;
   height: inherit;
   padding-left: 23px;
   box-sizing: border-box;
@@ -179,6 +178,7 @@
   color: #d8d8d8;
   background-image: url(/assets/expand-button.svg);
   background-repeat: no-repeat;
+  width: 100%;
   -webkit-appearance: none;
   cursor: pointer;
   border: 0;
@@ -222,8 +222,8 @@
     overflow: auto;
   }
   .form__block{
-    text-align: left;
     margin: 10px;
     width: auto;
+    text-align: left;
   }
 }
