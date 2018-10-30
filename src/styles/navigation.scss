@@ -30,3 +30,15 @@
 .navigation__link--accidents{
   color: #423f3f;
 }
+
+@media (max-width: 767.98px) { 
+  .navigation{
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  .navigation__link{
+    margin: 10px 0;
+  }
+ }

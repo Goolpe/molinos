@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --config=config/webpack.prod.js --mode production --open",
+    "dev": "webpack --config=config/webpack.dev.js --mode development",
+    "build": "webpack --config=config/webpack.prod.js --mode production"
   },
   "author": "Artur Khabirov",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "autoprefixer": "^9.3.1",
     "moment": "^2.22.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -19,7 +21,8 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -35,7 +38,9 @@
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.23.1",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   }

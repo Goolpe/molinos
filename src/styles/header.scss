@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('/assets/bitmap.jpg');
+  background-image: url('/assets/bg.webp');
   text-transform: uppercase;
 }
 
@@ -20,6 +20,7 @@
 
 .wrapper__title{
   margin: 17px 0;
+  text-align: center;
 }
 
 .wrapper__subtitle{
@@ -42,7 +43,7 @@
   right: 0;
   margin: auto;
   position: absolute;
-  bottom: 164px;
+  bottom: 20%;
   left: 0;
   overflow: hidden;
   border: 0;
@@ -89,7 +90,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(/assets/modalbg.jpg);
+  background-image: url(/assets/modalbg.webp);
 }
 
 .modal-window__form{
@@ -208,4 +209,17 @@
   color: #d8d8d8;
   margin: 5px;
   font-size: 16px;
+}
+
+@media (max-width: 991.98px) { 
+  .modal-window__form{
+    width: inherit;
+    height: inherit;
+    overflow: auto;
+  }
+  .form__block{
+    text-align: left;
+    margin: 10px;
+    width: auto;
+  }
 }

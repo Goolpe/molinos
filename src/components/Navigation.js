@@ -9,7 +9,7 @@ import '../styles/navigation.scss';
 class Navigation extends Component {
   render() {
     return (
-      <nav className='container'>
+      <nav>
         <ul className='navigation'>
           <li>
             <button name='Главные новости' data-tag='all'

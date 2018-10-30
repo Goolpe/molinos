@@ -1,6 +1,6 @@
 .footer{
   background: #000;
-  height: 247px;
+  height: auto;
   color: #fff;
 }
 
@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 
-.container__flex--search{
+.container__flex--block{
   flex-direction: row;
   padding-top: 78px;
 }
@@ -21,14 +21,19 @@
   padding-bottom: 14px; 
   border: 0;
   border-bottom: 3px solid #fff;
+  margin: 15px 0;
 }
 
 .container__flex--apple-icon{
   width: 84px;
   height: 28px;
+  margin: 15px 0;
 }
 
-.container__flex--bottom{
-  flex-direction: row;
-  padding-top: 79px;
+@media (max-width: 767.98px) { 
+  .container__flex--block{
+    flex-direction: column;
+    padding: 10px;
+    align-content: space-between;
+  }
 }

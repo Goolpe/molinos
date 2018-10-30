@@ -54,7 +54,7 @@ class NewsGrid extends Component {
       <article key={index}>
         <figure className='article__figure'>
           <img className='article__img' alt={article.title} src={article.file}/>
-            <button name={article.category} id={article.tag} className={`article__category ${
+            <button name={article.category} data-tag={article.tag} className={`article__category ${
               article.tag === 'sports' ? 'article__category--sports' :
               article.tag === 'politics' ? 'article__category--politics' :
               article.tag === 'science' ? 'article__category--science' :
