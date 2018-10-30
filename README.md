@@ -1,5 +1,3 @@
-## React/redux Single Page Application for news.
-------------------------------------------------
 ## About project
 
 Pages:
@@ -15,7 +13,7 @@ Other features:
 
 - Adaptive design;
 
-## Trechnologies
+## Technologies
 
 React, Redux, HTML, SCSS, JavaScript, Webpack.
 
