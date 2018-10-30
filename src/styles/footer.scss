@@ -11,8 +11,10 @@
 }
 
 .container__flex--block{
+  display: flex;
   flex-direction: row;
   padding-top: 78px;
+  justify-content: space-between;
 }
 
 .container__flex--search__input{
