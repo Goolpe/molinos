@@ -18,8 +18,8 @@
 .flex__block{
   display: flex;
   flex-direction: row;
-  padding-bottom: 36px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .flex__subblock{
@@ -38,6 +38,8 @@
 
 .flex__subblock--third{
   width: 444px;
+  margin-top: 36px;
+  
 }
 
 .block__category-title{
