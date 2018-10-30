@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CompressionPlugin = require('compression-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const common = require('./webpack.common.js');
 
@@ -97,12 +96,6 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
-    }),
-    new CompressionPlugin({
-      test: /\.(js|css)$/,
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
-      deleteOriginalAssets: true
     })
   ],
 });
