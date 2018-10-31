@@ -31,7 +31,7 @@ class NewsBlock extends Component {
   componentDidUpdate(prevProps, prevState) {
     if(this.state.currentPage !== prevState.currentPage) {
       this.setState({
-        currentPage: this.state.currentPage
+        currentPage: this.state.currentPage,
       });
       this.props.history.push('/page/' + this.state.currentPage);
     }
@@ -48,21 +48,23 @@ class NewsBlock extends Component {
       category: e.target.name,
       tag: e.target.dataset.tag,
       currentPage: 1,
-    })
+    });
   }
 
   handleLink(number) {
     this.setState({
       currentPage: number,
-    })
+    });
   }
 
   moreNews() {
     if (this.props.articles.filter(article =>
-      this.state.tag === article.tag || this.state.tag === 'all').length /
-      this.state.todosPerPage > this.state.currentPage) {
+    this.state.tag === article.tag || this.state.tag === 'all').length /
+    this.state.todosPerPage > this.state.currentPage) {
+
       this.setState({
-        todosPerPage: +this.state.todosPerPage + 2
+        todosPerPage: this.state.currentPage * this.state.todosPerPage + 2,
+        currentPage: 1,
       });
     }
     else{
