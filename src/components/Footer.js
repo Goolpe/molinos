@@ -5,7 +5,7 @@ function Footer(props) {
   return (
     <footer className='footer'>
       <section className='container container__flex'>
-        <div className='container__flex--block'>
+        <div className='container__flex--block container__flex--block--first'>
           <label for='search'>
             <input name='search' id='search' className='container__flex--search__input' placeholder='Поиск' />
           </label>

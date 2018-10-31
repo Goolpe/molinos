@@ -2,6 +2,7 @@
   background: #000;
   height: auto;
   color: #fff;
+  paddding-top: 40px;
 }
 
 .container__flex{
@@ -13,8 +14,12 @@
 .container__flex--block{
   display: flex;
   flex-direction: row;
-  padding-top: 78px;
+  padding: 40px 0;
   justify-content: space-between;
+}
+
+.container__flex--block--first{
+  margin-top: 40px;
 }
 
 .container__flex--search__input{
@@ -37,5 +42,8 @@
     flex-direction: column;
     padding: 10px;
     align-content: space-between;
+  }
+  .container__flex--block--first{
+    margin-top: 0;
   }
 }
