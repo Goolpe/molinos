@@ -177,5 +177,17 @@
   .flex__subblock--third{
     margin: 10px auto;
     width: auto;
+    min-height:  150px;
+  }
+  .flex__subblock--first{
+    height: auto;
+  }
+  .news__list{
+    margin: 20px 0;
+  }
+  .article__figure{
+    min-height: 150px;
+    height: 100%;
+    width: auto;
   }
 }

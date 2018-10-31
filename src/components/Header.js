@@ -78,6 +78,7 @@ class Header extends Component {
   }
 
   handleChangeSelect(e) {
+    console.log(e.target.dataset.tag)
     this.setState({
       category: JSON.parse(e.target.value).category,
       tag: JSON.parse(e.target.value).tag,

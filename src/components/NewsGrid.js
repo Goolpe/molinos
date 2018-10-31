@@ -18,7 +18,10 @@ class NewsGrid extends Component {
     const newsMainItem = articles.slice(0,1).map( (article, index) =>
       <article key={index}>
         <figure className='article__figure article__figure--first'>
-          <img className='article__img' alt={article.title} src={article.file}/>
+          <img className='article__img'
+            alt={article.title}
+            src={article.image || 'http://elitefon.ru/images/201211/elitefon.ru_5569.jpg'}
+          />
           <button name={article.category} data-tag={article.tag} className={`article__category ${
             article.tag === 'sports' ? 'article__category--sports' :
             article.tag === 'politics' ? 'article__category--politics' :
@@ -53,7 +56,10 @@ class NewsGrid extends Component {
     const newsItems = currentTodos.map( (article, index) =>
       <article className='flex__subblock--third' key={index}>
         <figure className='article__figure'>
-          <img className='article__img' alt={article.title} src={article.file}/>
+          <img className='article__img'
+            alt={article.title}
+            src={article.image || 'http://elitefon.ru/images/201211/elitefon.ru_5569.jpg'}
+          />
             <button name={article.category} data-tag={article.tag} className={`article__category ${
               article.tag === 'sports' ? 'article__category--sports' :
               article.tag === 'politics' ? 'article__category--politics' :

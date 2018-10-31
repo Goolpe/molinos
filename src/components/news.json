@@ -4,7 +4,8 @@
     "text": "Lorem ipsum",
     "category": "Спорт",
     "tag": "sports",
-    "file": "/assets/dzyuba.jpg",
+    "file": "",
+    "image": "/assets/dzyuba.jpg",
     "date": "2018-09-11T01:50:04.208Z"
   },
   {
@@ -12,7 +13,8 @@
     "text": "Lorem ipsum",
     "category": "Политика",
     "tag": "politics",
-    "file": "https://memepedia.ru/wp-content/uploads/2016/09/nu-davay-taya-rasskazhi-kak-ty-men_10074996_orig_.jpeg",
+    "filk": "",
+    "image": "https://memepedia.ru/wp-content/uploads/2016/09/nu-davay-taya-rasskazhi-kak-ty-men_10074996_orig_.jpeg",
     "date": "2018-09-11T01:50:04.208Z"
   },
   {
@@ -20,7 +22,8 @@
     "text": "Lorem ipsum",
     "category": "Происшествия",
     "tag": "accidents",
-    "file": "https://memepedia.ru/wp-content/uploads/2017/09/%D0%B4%D0%B5%D0%B2%D0%BE%D1%87%D0%BA%D0%B0-%D1%81-%D1%85%D0%B2%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8-%D0%BC%D0%B5%D0%BC-1.jpg",
+    "filk": "",
+    "image": "https://memepedia.ru/wp-content/uploads/2017/09/%D0%B4%D0%B5%D0%B2%D0%BE%D1%87%D0%BA%D0%B0-%D1%81-%D1%85%D0%B2%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8-%D0%BC%D0%B5%D0%BC-1.jpg",
     "date": "2018-09-12T03:19:04.208Z"
   },
   {
@@ -28,7 +31,8 @@
     "text": "Lorem ipsum",
     "category": "Бизнес",
     "tag": "business",
-    "file": "http://newsworker.ru/wp-content/uploads/2013/03/angela-merkel.jpg",
+    "filk": "",
+    "image": "http://newsworker.ru/wp-content/uploads/2013/03/angela-merkel.jpg",
     "date": "2018-09-12T18:08:04.208Z"
   },
   {
@@ -36,7 +40,8 @@
     "text": "Lorem ipsum",
     "category": "Политика",
     "tag": "politics",
-    "file": "/assets/Yaposhka.jpg",
+    "filk": "",
+    "image": "/assets/Yaposhka.jpg",
     "date": "2018-09-13T16:23:04.208Z"
   },
   {
@@ -44,7 +49,8 @@
     "text": "Lorem ipsum",
     "category": "Спорт",
     "tag": "sports",
-    "file": "/assets/ViktorAn.jpg",
+    "filk": "",
+    "image": "/assets/ViktorAn.jpg",
     "date": "2018-09-12T18:08:04.208Z"
   },
   {
@@ -52,7 +58,8 @@
     "text": "Lorem ipsum",
     "category": "Бизнес",
     "tag": "business",
-    "file": "http://img-fotki.yandex.ru/get/4102/pierell.10/0_3adbd_62c3d4b9_L",
+    "filk": "",
+    "image": "http://img-fotki.yandex.ru/get/4102/pierell.10/0_3adbd_62c3d4b9_L",
     "date": "2018-09-12T18:08:04.208Z"
   },
   {
@@ -60,7 +67,8 @@
     "text": "Lorem ipsum",
     "category": "Политика",
     "tag": "politics",
-    "file": "https://rian.com.ua/images/102171/44/1021714462.jpg",
+    "filk": "",
+    "image": "https://rubryka.com/wp-content/uploads/2018/06/58b01395d733d.jpg",
     "date": "2018-09-13T16:23:04.208Z"
   },
   {
@@ -68,7 +76,8 @@
     "text": "Lorem ipsum",
     "category": "Спорт",
     "tag": "sports",
-    "file": "https://i.ytimg.com/vi/p_ZjZiI5CM8/maxresdefault.jpg",
+    "filk": "",
+    "image": "https://i.ytimg.com/vi/p_ZjZiI5CM8/maxresdefault.jpg",
     "date": "2018-09-12T18:08:04.208Z"
   }
 ]
