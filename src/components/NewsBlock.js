@@ -77,7 +77,7 @@ class NewsBlock extends Component {
       <section className="container">
         <Navigation tag={this.state.tag} handleClick={this.handleClick}/>
         <NewsGrid
-          articles={this.props.articles}
+          articles={this.props.articles.filter(article=> article.title.toLowerCase().includes(this.props.search.toLowerCase()))}
           category={this.state.category}
           tag={this.state.tag}
           currentPage={this.state.currentPage}
@@ -85,7 +85,7 @@ class NewsBlock extends Component {
           handleClick={this.handleClick}
         />
         <Pagination
-          articles={this.props.articles}
+          articles={this.props.articles.filter(article=> article.title.toLowerCase().includes(this.props.search.toLowerCase()))}
           tag={this.state.tag}
           handleClick={this.handleClick}
           handleLink={this.handleLink}

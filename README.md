@@ -8,6 +8,7 @@ Main features:
 
 - Modal window for adding articles;
 - Ability to sort by categories;
+- Ability to search articles by title in Footer;
 
 Other features: 
 
